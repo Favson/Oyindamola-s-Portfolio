@@ -1,681 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adeniyi Oyindamola · Virtual Assistant Portfolio</title>
 
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap');
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+    <!-- Tabler Icons (lightweight icon set) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css" />
 
-  .port {
-    font-family: 'Lato', sans-serif;
-    background: #1a0f0a;
-    color: #f5efe6;
-    width: 100%;
-  }
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-  .serif { font-family: 'Playfair Display', serif; }
+        .port {
+            font-family: 'Lato', sans-serif;
+            background: #1a0f0a;
+            color: #f5efe6;
+            width: 100%;
+            overflow-x: hidden;
+        }
 
-  /* HERO */
-  .hero {
-    background: linear-gradient(135deg, #2c1a0e 0%, #1a0f0a 60%, #0d0705 100%);
-    padding: 60px 48px 50px;
-    display: flex;
-    align-items: center;
-    gap: 48px;
-    border-bottom: 1px solid #b8860b44;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -60px; right: -60px;
-    width: 300px; height: 300px;
-    border-radius: 50%;
-    background: radial-gradient(circle, #b8860b18 0%, transparent 70%);
-  }
-  .hero-img-wrap {
-    flex-shrink: 0;
-    width: 500px;
-    height: 550px;
-    border-radius: 12px;
-    border: 2px solid #b8860b;
-    overflow: hidden;
-    box-shadow: 0 0 40px #b8860b33;
-  }
-  .hero-img-wrap img {
-    width: 100%; height: 100%; object-fit: cover; object-position: top -1;
-  }
-  .hero-text { flex: 1; }
-  .hero-badge {
-    display: inline-block;
-    background: #b8860b22;
-    border: 1px solid #b8860b66;
-    color: #d4aa5a;
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 5px 14px;
-    border-radius: 20px;
-    margin-bottom: 16px;
-  }
-  .hero-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 40px;
-    font-weight: 600;
-    color: #fff;
-    line-height: 1.15;
-    margin-bottom: 10px;
-  }
-  .hero-tagline {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 15px;
-    color: #d4aa5a;
-    margin-bottom: 20px;
-    line-height: 1.6;
-  }
-  .hero-title {
-    font-size: 13px;
-    color: #c8b89a;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-bottom: 24px;
-  }
-  .hero-chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  .chip {
-    background: #2e1e12;
-    border: 1px solid #5c3a1e;
-    color: #c8b89a;
-    font-size: 12px;
-    padding: 5px 14px;
-    border-radius: 20px;
-  }
-  .chip.gold {
-    background: #b8860b22;
-    border-color: #b8860b55;
-    color: #d4aa5a;
-  }
-  .hero-email {
-    font-size: 13px;
-    color: #b8860b;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
+        .serif {
+            font-family: 'Playfair Display', serif;
+        }
 
-  /* SECTIONS */
-  .section {
-    padding: 50px 48px;
-    border-bottom: 1px solid #b8860b22;
-  }
-  .section-label {
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #b8860b;
-    margin-bottom: 8px;
-  }
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    color: #fff;
-    margin-bottom: 28px;
-  }
+        /* ===== HELPERS ===== */
+        .section {
+            padding: 40px 24px;
+            border-bottom: 1px solid #b8860b22;
+        }
 
-  /* ABOUT */
-  .about-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-  .about-card {
-    background: #2c1a0e;
-    border: 1px solid #5c3a1e;
-    border-radius: 10px;
-    padding: 20px;
-    display: flex;
-    gap: 14px;
-    align-items: flex-start;
-  }
-  .about-icon {
-    color: #b8860b;
-    font-size: 22px;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-  .about-card p {
-    font-size: 13.5px;
-    line-height: 1.65;
-    color: #c8b89a;
-  }
+        .section-label {
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #b8860b;
+            margin-bottom: 6px;
+        }
 
-  /* SERVICES */
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-  .service-card {
-    background: #2c1a0e;
-    border: 1px solid #5c3a1e;
-    border-left: 3px solid #b8860b;
-    border-radius: 10px;
-    padding: 22px 20px;
-  }
-  .service-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 16px;
-    color: #fff;
-    margin-bottom: 8px;
-  }
-  .service-card p {
-    font-size: 13px;
-    color: #9a8a78;
-    line-height: 1.6;
-  }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
 
-  /* SKILLS */
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-  }
-  .skill-group {
-    background: #2c1a0e;
-    border: 1px solid #5c3a1e;
-    border-radius: 10px;
-    padding: 20px;
-  }
-  .skill-group h3 {
-    font-size: 12px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #b8860b;
-    margin-bottom: 14px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 7px;
-  }
-  .skill-tag {
-    background: #1a0f0a;
-    border: 1px solid #5c3a1e;
-    color: #c8b89a;
-    font-size: 12px;
-    padding: 4px 10px;
-    border-radius: 4px;
-  }
+        .chip {
+            background: #2e1e12;
+            border: 1px solid #5c3a1e;
+            color: #c8b89a;
+            font-size: 12px;
+            padding: 5px 14px;
+            border-radius: 20px;
+            display: inline-block;
+        }
 
-  /* PORTFOLIO */
-  .portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-  }
-  .portfolio-card {
-    background: #2c1a0e;
-    border: 1px solid #5c3a1e;
-    border-radius: 10px;
-    padding: 22px;
-    position: relative;
-    overflow: hidden;
-  }
-  .portfolio-card::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #b8860b, #d4aa5a);
-  }
-  .portfolio-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 15px;
-    color: #fff;
-    margin-bottom: 10px;
-  }
-  .portfolio-card p {
-    font-size: 12.5px;
-    color: #9a8a78;
-    line-height: 1.6;
-    margin-bottom: 14px;
-  }
-  .outcome {
-    background: #b8860b18;
-    border: 1px solid #b8860b44;
-    border-radius: 6px;
-    padding: 8px 12px;
-    font-size: 12px;
-    color: #d4aa5a;
-  }
+        .chip.gold {
+            background: #b8860b22;
+            border-color: #b8860b55;
+            color: #d4aa5a;
+        }
 
-  /* PROCESS */
-  .process-row {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-  }
-  .process-step {
-    text-align: center;
-    padding: 24px 16px;
-    position: relative;
-  }
-  .process-step:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    right: 0; top: 50%;
-    transform: translateY(-50%);
-    width: 1px;
-    height: 40px;
-    background: #b8860b44;
-  }
-  .step-num {
-    width: 44px; height: 44px;
-    border-radius: 50%;
-    background: #2c1a0e;
-    border: 2px solid #b8860b;
-    color: #b8860b;
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    display: flex; align-items: center; justify-content: center;
-    margin: 0 auto 14px;
-  }
-  .process-step h3 {
-    font-size: 14px;
-    color: #fff;
-    margin-bottom: 6px;
-    font-family: 'Playfair Display', serif;
-  }
-  .process-step p {
-    font-size: 12px;
-    color: #9a8a78;
-    line-height: 1.5;
-  }
+        /* ===== HERO ===== */
+        .hero {
+            background: linear-gradient(135deg, #2c1a0e 0%, #1a0f0a 60%, #0d0705 100%);
+            padding: 32px 24px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 32px;
+            border-bottom: 1px solid #b8860b44;
+            position: relative;
+            overflow: hidden;
+        }
 
-  /* TESTIMONIALS */
-  .testi-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-  .testi-card {
-    background: #2c1a0e;
-    border: 1px solid #5c3a1e;
-    border-radius: 10px;
-    padding: 28px 24px;
-    position: relative;
-  }
-  .quote-mark {
-    font-family: 'Playfair Display', serif;
-    font-size: 64px;
-    color: #b8860b33;
-    position: absolute;
-    top: 8px; left: 18px;
-    line-height: 1;
-  }
-  .testi-text {
-    font-size: 13.5px;
-    color: #c8b89a;
-    line-height: 1.75;
-    font-style: italic;
-    margin-bottom: 18px;
-    padding-top: 20px;
-  }
-  .testi-author strong {
-    color: #d4aa5a;
-    font-size: 13px;
-  }
-  .testi-author span {
-    color: #9a8a78;
-    font-size: 12px;
-  }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #b8860b18 0%, transparent 70%);
+            pointer-events: none;
+        }
 
-  /* CONTACT */
-  .contact-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: center;
-  }
-  .contact-info p {
-    font-size: 14px;
-    color: #9a8a78;
-    line-height: 1.7;
-    margin-bottom: 28px;
-  }
-  .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 16px 18px;
-    background: #2c1a0e;
-    border: 1px solid #5c3a1e;
-    border-radius: 10px;
-    margin-bottom: 12px;
-  }
-  .contact-item-icon {
-    color: #b8860b;
-    font-size: 20px;
-    flex-shrink: 0;
-  }
-  .contact-item h4 {
-    font-size: 11px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: #b8860b;
-    margin-bottom: 3px;
-  }
-  .contact-item p {
-    font-size: 13px;
-    color: #c8b89a;
-    margin: 0;
-    line-height: 1.4;
-  }
-  .contact-img {
-    flex-shrink: 0;
-    border-radius: 12px;
-    overflow: hidden;
-    height: 500px;
-    width: 500px;
-    margin-left: 55px;
-    border: 2px solid #b8860b44;
-  }
-  .contact-img img {
-    width: 100%;
-    display: block;
-    object-position:-0px -100px;
-  }
+        .hero-text {
+            width: 100%;
+            order: 1;
+        }
 
-  /* FOOTER */
-  .footer {
-    background: #0d0705;
-    padding: 40px 48px;
-    text-align: center;
-    border-top: 1px solid #b8860b33;
-  }
-  .footer-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    color: #fff;
-    margin-bottom: 8px;
-  }
-  .footer-sub {
-    font-size: 12px;
-    color: #9a8a78;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-  }
-  .footer-divider {
-    width: 60px; height: 1px;
-    background: #b8860b;
-    margin: 0 auto 16px;
-  }
-  .footer-values {
-    display: flex;
-    justify-content: center;
-    gap: 32px;
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #b8860b;
-  }
-</style>
+        .hero-img-wrap {
+            flex-shrink: 0;
+            width: 100%;
+            max-width: 340px;
+            border-radius: 12px;
+            border: 2px solid #b8860b;
+            overflow: hidden;
+            box-shadow: 0 0 40px #b8860b33;
+            order: 0;
+        }
 
-<div class="port">
+        .hero-img-wrap img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            aspect-ratio: 1 / 1.1;
+        }
 
-  <!-- HERO -->
-  <div class="hero">
-    <div class="hero-text">
-      <div class="hero-badge">Virtual Assistant · Remote-Ready</div>
-      <div class="hero-name">Adeniyi<br>Oyindamola</div>
-      <div class="hero-tagline">"Turning Chaos into Clarity —<br>So You Can Focus on What Matters Most."</div>
-      <div class="hero-title">Virtual Assistant &nbsp;|&nbsp; Administrative Expert &nbsp;|&nbsp; Researcher</div>
-      <div class="hero-chips">
-        <span class="chip gold">✦ Available for Remote Work</span>
-        <span class="chip">Full-Time &amp; Part-Time</span>
-        <span class="chip">Immediate Availability</span>
-      </div>
-      <div class="hero-email">
-        <i class="ti ti-mail" aria-hidden="true"></i>
-        oyindamolarth@gmail.com
-      </div>
-    </div>
-    <div class="hero-img-wrap">
-      <img src="oyin.jpg" alt="Adeniyi Oyindamola" />
-    </div>
-  </div>
+        .hero-badge {
+            display: inline-block;
+            background: #b8860b22;
+            border: 1px solid #b8860b66;
+            color: #d4aa5a;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 20px;
+            margin-bottom: 14px;
+        }
 
-  <!-- ABOUT -->
-  <div class="section">
-    <div class="section-label">About Me</div>
-    <div class="section-title">Who I Am</div>
-    <div class="about-grid">
-      <div class="about-card">
-        <i class="ti ti-calendar-check about-icon" aria-hidden="true"></i>
-        <p>Expert in schedule management, email handling, data entry, and social media support — keeping your operations running smoothly every day.</p>
-      </div>
-      <div class="about-card">
-        <i class="ti ti-device-laptop about-icon" aria-hidden="true"></i>
-        <p>Proficient in Google Workspace, Microsoft Office, Canva, Zoom, Slack, Trello, and Notion — your tech-ready remote partner.</p>
-      </div>
-      <div class="about-card">
-        <i class="ti ti-heart about-icon" aria-hidden="true"></i>
-        <p>Passionate about helping businesses, health professionals, and coaches stay productive, consistent, and focused on growth.</p>
-      </div>
-      <div class="about-card">
-        <i class="ti ti-shield-check about-icon" aria-hidden="true"></i>
-        <p>Known for precision, reliability, and a proactive approach to problem-solving — with full discretion and confidentiality guaranteed.</p>
-      </div>
-    </div>
-  </div>
+        .hero-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 34px;
+            font-weight: 600;
+            color: #fff;
+            line-height: 1.15;
+            margin-bottom: 8px;
+        }
 
-  <!-- SERVICES -->
-  <div class="section">
-    <div class="section-label">What I Offer</div>
-    <div class="section-title">Services</div>
-    <p style="font-size:14px; color:#9a8a78; margin-bottom:24px; line-height:1.7;">A comprehensive suite of virtual support services designed to free your time and streamline your operations.</p>
-    <div class="services-grid">
-      <div class="service-card">
-        <h3><i class="ti ti-inbox" aria-hidden="true" style="color:#b8860b; margin-right:8px; font-size:16px;"></i>Calendar &amp; Email Management</h3>
-        <p>Inbox organization, appointment scheduling, and time management — so you never miss a meeting or deadline.</p>
-      </div>
-      <div class="service-card">
-        <h3><i class="ti ti-report-search" aria-hidden="true" style="color:#b8860b; margin-right:8px; font-size:16px;"></i>Research &amp; Data Compilation</h3>
-        <p>Market research, competitor analysis, and clean structured reports that deliver actionable insights fast.</p>
-      </div>
-      <div class="service-card">
-        <h3><i class="ti ti-file-text" aria-hidden="true" style="color:#b8860b; margin-right:8px; font-size:16px;"></i>Administrative Support</h3>
-        <p>Document preparation, spreadsheet management, CRM updates, and file organization — with precision and speed.</p>
-      </div>
-      <div class="service-card">
-        <h3><i class="ti ti-message-circle" aria-hidden="true" style="color:#b8860b; margin-right:8px; font-size:16px;"></i>Customer Service</h3>
-        <p>Professional email and chat responses, follow-ups, and client coordination that strengthen business relationships.</p>
-      </div>
-    </div>
-  </div>
+        .hero-tagline {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 15px;
+            color: #d4aa5a;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
 
-  <!-- SKILLS -->
-  <div class="section">
-    <div class="section-label">Core Competencies</div>
-    <div class="section-title">Skills &amp; Expertise</div>
-    <div class="skills-grid">
-      <div class="skill-group">
-        <h3><i class="ti ti-settings" aria-hidden="true"></i> Administrative</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">Calendar Management</span>
-          <span class="skill-tag">Email Inbox</span>
-          <span class="skill-tag">Data Entry</span>
-          <span class="skill-tag">Document Prep</span>
-          <span class="skill-tag">File Management</span>
-          <span class="skill-tag">Cloud Storage</span>
+        .hero-title {
+            font-size: 12px;
+            color: #c8b89a;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
+        }
+
+        .hero-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .hero-email {
+            font-size: 13px;
+            color: #b8860b;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* ===== ABOUT ===== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+
+        .about-card {
+            background: #2c1a0e;
+            border: 1px solid #5c3a1e;
+            border-radius: 10px;
+            padding: 18px 16px;
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+
+        .about-icon {
+            color: #b8860b;
+            font-size: 22px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .about-card p {
+            font-size: 13.5px;
+            line-height: 1.65;
+            color: #c8b89a;
+        }
+
+        /* ===== SERVICES ===== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+
+        .service-card {
+            background: #2c1a0e;
+            border: 1px solid #5c3a1e;
+            border-left: 3px solid #b8860b;
+            border-radius: 10px;
+            padding: 18px 16px;
+        }
+
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+
+        .service-card p {
+            font-size: 13px;
+            color: #9a8a78;
+            line-height: 1.6;
+        }
+
+        /* ===== SKILLS ===== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+
+        .skill-group {
+            background: #2c1a0e;
+            border: 1px solid #5c3a1e;
+            border-radius: 10px;
+            padding: 18px 16px;
+        }
+
+        .skill-group h3 {
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #b8860b;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .skill-tag {
+            background: #1a0f0a;
+            border: 1px solid #5c3a1e;
+            color: #c8b89a;
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 4px;
+        }
+
+        /* ===== PORTFOLIO ===== */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+
+        .portfolio-card {
+            background: #2c1a0e;
+            border: 1px solid #5c3a1e;
+            border-radius: 10px;
+            padding: 20px 18px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #b8860b, #d4aa5a);
+        }
+
+        .portfolio-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 15px;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .portfolio-card p {
+            font-size: 12.5px;
+            color: #9a8a78;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .outcome {
+            background: #b8860b18;
+            border: 1px solid #b8860b44;
+            border-radius: 6px;
+            padding: 8px 12px;
+            font-size: 12px;
+            color: #d4aa5a;
+        }
+
+        /* ===== PROCESS ===== */
+        .process-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 18px 12px;
+            background: #2c1a0e;
+            border: 1px solid #5c3a1e;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .step-num {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #1a0f0a;
+            border: 2px solid #b8860b;
+            color: #b8860b;
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+        }
+
+        .process-step h3 {
+            font-size: 14px;
+            color: #fff;
+            margin-bottom: 4px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .process-step p {
+            font-size: 12px;
+            color: #9a8a78;
+            line-height: 1.5;
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testi-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        .testi-card {
+            background: #2c1a0e;
+            border: 1px solid #5c3a1e;
+            border-radius: 10px;
+            padding: 24px 20px;
+            position: relative;
+        }
+
+        .quote-mark {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            color: #b8860b33;
+            position: absolute;
+            top: 4px;
+            left: 14px;
+            line-height: 1;
+        }
+
+        .testi-text {
+            font-size: 13.5px;
+            color: #c8b89a;
+            line-height: 1.75;
+            font-style: italic;
+            margin-bottom: 16px;
+            padding-top: 18px;
+        }
+
+        .testi-author strong {
+            color: #d4aa5a;
+            font-size: 13px;
+        }
+
+        .testi-author span {
+            color: #9a8a78;
+            font-size: 12px;
+        }
+
+        /* ===== CONTACT ===== */
+        .contact-inner {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 28px;
+            align-items: center;
+        }
+
+        .contact-info p {
+            font-size: 14px;
+            color: #9a8a78;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 16px;
+            background: #2c1a0e;
+            border: 1px solid #5c3a1e;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .contact-item-icon {
+            color: #b8860b;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .contact-item h4 {
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #b8860b;
+            margin-bottom: 2px;
+        }
+
+        .contact-item p {
+            font-size: 13px;
+            color: #c8b89a;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .contact-img {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid #b8860b44;
+        }
+
+        .contact-img img {
+            width: 100%;
+            display: block;
+            aspect-ratio: 1 / 1.2;
+            object-fit: cover;
+        }
+
+        .availability-banner {
+            margin-top: 16px;
+            background: #b8860b18;
+            border: 1px solid #b8860b55;
+            border-radius: 8px;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .availability-banner i {
+            color: #b8860b;
+            font-size: 18px;
+        }
+
+        .availability-banner span {
+            font-size: 13px;
+            color: #d4aa5a;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: #0d0705;
+            padding: 32px 24px;
+            text-align: center;
+            border-top: 1px solid #b8860b33;
+        }
+
+        .footer-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+
+        .footer-sub {
+            font-size: 11px;
+            color: #9a8a78;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .footer-divider {
+            width: 60px;
+            height: 1px;
+            background: #b8860b;
+            margin: 0 auto 14px;
+        }
+
+        .footer-values {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #b8860b;
+            flex-wrap: wrap;
+        }
+
+        /* ================================================================
+                   RESPONSIVE BREAKPOINTS
+                   ================================================================ */
+
+        /* Tablet: 768px and up */
+        @media (min-width: 768px) {
+            .section {
+                padding: 50px 40px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            /* Hero: image on right, text on left */
+            .hero {
+                flex-direction: row;
+                padding: 50px 40px 50px;
+                gap: 40px;
+                align-items: center;
+            }
+
+            .hero-text {
+                order: 0;
+                flex: 1;
+            }
+
+            .hero-img-wrap {
+                order: 1;
+                max-width: 340px;
+                flex-shrink: 0;
+            }
+
+            .hero-name {
+                font-size: 38px;
+            }
+
+            .hero-tagline {
+                font-size: 16px;
+            }
+
+            /* About: 2 columns */
+            .about-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            /* Services: 2 columns */
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            /* Skills: 3 columns */
+            .skills-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            /* Portfolio: 3 columns */
+            .portfolio-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            /* Process: 4 columns */
+            .process-row {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 0;
+            }
+
+            .process-step {
+                background: transparent;
+                border: none;
+                border-radius: 0;
+                padding: 24px 16px;
+            }
+
+            .process-step:not(:last-child)::after {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 1px;
+                height: 40px;
+                background: #b8860b44;
+            }
+
+            /* Testimonials: 2 columns */
+            .testi-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            /* Contact: 2 columns */
+            .contact-inner {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+
+            .contact-img {
+                height: 400px;
+            }
+
+            .contact-img img {
+                height: 100%;
+                aspect-ratio: auto;
+                object-fit: cover;
+            }
+
+            .footer {
+                padding: 40px 48px;
+            }
+        }
+
+        /* Desktop: 1024px and up */
+        @media (min-width: 1024px) {
+            .section {
+                padding: 60px 64px;
+            }
+
+            .hero {
+                padding: 60px 64px 56px;
+                gap: 56px;
+            }
+
+            .hero-img-wrap {
+                max-width: 420px;
+            }
+
+            .hero-name {
+                font-size: 44px;
+            }
+
+            .hero-tagline {
+                font-size: 18px;
+            }
+
+            .hero-title {
+                font-size: 13px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .contact-img {
+                height: 480px;
+            }
+        }
+
+        /* Large Desktop: 1400px and up */
+        @media (min-width: 1400px) {
+            .hero-img-wrap {
+                max-width: 500px;
+            }
+
+            .hero-name {
+                font-size: 52px;
+            }
+        }
+
+        /* Very small screens: < 400px */
+        @media (max-width: 399px) {
+            .hero-name {
+                font-size: 28px;
+            }
+
+            .hero-tagline {
+                font-size: 13px;
+            }
+
+            .hero-title {
+                font-size: 11px;
+            }
+
+            .section {
+                padding: 28px 16px;
+            }
+
+            .process-row {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+
+            .process-step {
+                padding: 14px 10px;
+            }
+
+            .step-num {
+                width: 34px;
+                height: 34px;
+                font-size: 15px;
+            }
+
+            .process-step h3 {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="port">
+
+        <!-- ===== HERO ===== -->
+        <div class="hero">
+            <div class="hero-text">
+                <div class="hero-badge">Virtual Assistant · Remote-Ready</div>
+                <div class="hero-name">Adeniyi<br />Oyindamola</div>
+                <div class="hero-tagline">
+                    "Turning Chaos into Clarity —<br />So You Can Focus on What Matters Most."
+                </div>
+                <div class="hero-title">Virtual Assistant &nbsp;|&nbsp; Administrative Expert &nbsp;|&nbsp; Researcher</div>
+                <div class="hero-chips">
+                    <span class="chip gold">✦ Available for Remote Work</span>
+                    <span class="chip">Full‑Time &amp; Part‑Time</span>
+                    <span class="chip">Immediate Availability</span>
+                </div>
+                <div class="hero-email">
+                    <i class="ti ti-mail" aria-hidden="true"></i>
+                    oyindamolarth@gmail.com
+                </div>
+            </div>
+            <div class="hero-img-wrap">
+                <!-- Replace src with your own image -->
+                <img src="oyin.jpg" alt="Adeniyi Oyindamola" />
+            </div>
         </div>
-      </div>
-      <div class="skill-group">
-        <h3><i class="ti ti-device-desktop" aria-hidden="true"></i> Technical</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">Google Workspace</span>
-          <span class="skill-tag">Microsoft Office</span>
-          <span class="skill-tag">Canva</span>
-          <span class="skill-tag">Zoom</span>
-          <span class="skill-tag">Slack</span>
-          <span class="skill-tag">Trello</span>
-          <span class="skill-tag">Notion</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <h3><i class="ti ti-star" aria-hidden="true"></i> Soft Skills</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">Attention to Detail</span>
-          <span class="skill-tag">Time Management</span>
-          <span class="skill-tag">Adaptability</span>
-          <span class="skill-tag">Discretion</span>
-          <span class="skill-tag">Confidentiality</span>
-          <span class="skill-tag">Communication</span>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- PORTFOLIO -->
-  <div class="section">
-    <div class="section-label">Portfolio</div>
-    <div class="section-title">Portfolio Highlights</div>
-    <div class="portfolio-grid">
-      <div class="portfolio-card">
-        <h3>Health &amp; Wellness Brand</h3>
-        <p>Researched competitors, delivered a structured report with market trends and strategic recommendations.</p>
-        <div class="outcome">✦ Client pivoted pricing strategy — 20% increase in inquiry conversions</div>
-      </div>
-      <div class="portfolio-card">
-        <h3>Research Proposal</h3>
-        <p>Gathered data, structured the full document, and proofread for clarity, tone, and formatting standards.</p>
-        <div class="outcome">✦ Submitted on time; client secured approval on first submission</div>
-      </div>
-      <div class="portfolio-card">
-        <h3>Online Business Launch</h3>
-        <p>Built a full launch tracker in Google Sheets, coordinating team tasks and client onboarding seamlessly.</p>
-        <div class="outcome">✦ Launched on schedule; client saved 8+ hours/week on admin</div>
-      </div>
-    </div>
-    <div style="display:flex; gap:12px; margin-top:20px; flex-wrap:wrap;">
-      <span class="chip">Market Research Report</span>
-      <span class="chip">Project Management Support</span>
-      <span class="chip">Proposal Writing Support</span>
-    </div>
-  </div>
+        <!-- ===== ABOUT ===== -->
+        <div class="section">
+            <div class="section-label">About Me</div>
+            <div class="section-title">Who I Am</div>
+            <div class="about-grid">
+                <div class="about-card">
+                    <i class="ti ti-calendar-check about-icon" aria-hidden="true"></i>
+                    <p>Expert in schedule management, email handling, data entry, and social media support — keeping your operations running smoothly every day.</p>
+                </div>
+                <div class="about-card">
+                    <i class="ti ti-device-laptop about-icon" aria-hidden="true"></i>
+                    <p>Proficient in Google Workspace, Microsoft Office, Canva, Zoom, Slack, Trello, and Notion — your tech-ready remote partner.</p>
+                </div>
+                <div class="about-card">
+                    <i class="ti ti-heart about-icon" aria-hidden="true"></i>
+                    <p>Passionate about helping businesses, health professionals, and coaches stay productive, consistent, and focused on growth.</p>
+                </div>
+                <div class="about-card">
+                    <i class="ti ti-shield-check about-icon" aria-hidden="true"></i>
+                    <p>Known for precision, reliability, and a proactive approach to problem-solving — with full discretion and confidentiality guaranteed.</p>
+                </div>
+            </div>
+        </div>
 
-  <!-- PROCESS -->
-  <div class="section">
-    <div class="section-label">How We Work Together</div>
-    <div class="section-title">Simple. Seamless. Effective.</div>
-    <p style="font-size:14px; color:#9a8a78; margin-bottom:28px; line-height:1.7;">Getting started is simple and stress-free. From our first conversation to seamless day-to-day support, every step is designed to get you results quickly.</p>
-    <div class="process-row">
-      <div class="process-step">
-        <div class="step-num">1</div>
-        <h3>Discovery</h3>
-        <p>We discuss your needs, goals, and how I can best support your business</p>
-      </div>
-      <div class="process-step">
-        <div class="step-num">2</div>
-        <h3>Proposal</h3>
-        <p>I send a tailored plan with scope, timeline, and terms that fit you</p>
-      </div>
-      <div class="process-step">
-        <div class="step-num">3</div>
-        <h3>Onboarding</h3>
-        <p>We set up tools, access, and workflows — quick and hassle-free</p>
-      </div>
-      <div class="process-step">
-        <div class="step-num">4</div>
-        <h3>Deliver</h3>
-        <p>I get to work, keeping you updated with clear communication throughout</p>
-      </div>
-    </div>
-  </div>
+        <!-- ===== SERVICES ===== -->
+        <div class="section">
+            <div class="section-label">What I Offer</div>
+            <div class="section-title">Services</div>
+            <p style="font-size:14px; color:#9a8a78; margin-bottom:20px; line-height:1.7;">
+                A comprehensive suite of virtual support services designed to free your time and streamline your operations.
+            </p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>
+                        <i class="ti ti-inbox" aria-hidden="true" style="color:#b8860b; margin-right:8px; font-size:16px;"></i>
+                        Calendar &amp; Email Management
+                    </h3>
+                    <p>Inbox organization, appointment scheduling, and time management — so you never miss a meeting or deadline.</p>
+                </div>
+                <div class="service-card">
+                    <h3>
+                        <i class="ti ti-report-search" aria-hidden="true" style="color:#b8860b; margin-right:8px; font-size:16px;"></i>
+                        Research &amp; Data Compilation
+                    </h3>
+                    <p>Market research, competitor analysis, and clean structured reports that deliver actionable insights fast.</p>
+                </div>
+                <div class="service-card">
+                    <h3>
+                        <i class="ti ti-file-text" aria-hidden="true" style="color:#b8860b; margin-right:8px; font-size:16px;"></i>
+                        Administrative Support
+                    </h3>
+                    <p>Document preparation, spreadsheet management, CRM updates, and file organization — with precision and speed.</p>
+                </div>
+                <div class="service-card">
+                    <h3>
+                        <i class="ti ti-message-circle" aria-hidden="true" style="color:#b8860b; margin-right:8px; font-size:16px;"></i>
+                        Customer Service
+                    </h3>
+                    <p>Professional email and chat responses, follow-ups, and client coordination that strengthen business relationships.</p>
+                </div>
+            </div>
+        </div>
 
-  <!-- TESTIMONIALS -->
-  <div class="section">
-    <div class="section-label">Testimonials</div>
-    <div class="section-title">What Clients Say</div>
-    <div class="testi-grid">
-      <div class="testi-card">
-        <div class="quote-mark">"</div>
-        <p class="testi-text">Transformed our operations and kept our team accountable. Our launch was on time, on budget, and zero confusion. She's a strategic partner.</p>
-        <div class="testi-author">
-          <strong>Mrs. Omolola Adigun</strong><br>
-          <span>Business Owner</span>
+        <!-- ===== SKILLS ===== -->
+        <div class="section">
+            <div class="section-label">Core Competencies</div>
+            <div class="section-title">Skills &amp; Expertise</div>
+            <div class="skills-grid">
+                <div class="skill-group">
+                    <h3><i class="ti ti-settings" aria-hidden="true"></i> Administrative</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Calendar Management</span>
+                        <span class="skill-tag">Email Inbox</span>
+                        <span class="skill-tag">Data Entry</span>
+                        <span class="skill-tag">Document Prep</span>
+                        <span class="skill-tag">File Management</span>
+                        <span class="skill-tag">Cloud Storage</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3><i class="ti ti-device-desktop" aria-hidden="true"></i> Technical</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Google Workspace</span>
+                        <span class="skill-tag">Microsoft Office</span>
+                        <span class="skill-tag">Canva</span>
+                        <span class="skill-tag">Zoom</span>
+                        <span class="skill-tag">Slack</span>
+                        <span class="skill-tag">Trello</span>
+                        <span class="skill-tag">Notion</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <h3><i class="ti ti-star" aria-hidden="true"></i> Soft Skills</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Attention to Detail</span>
+                        <span class="skill-tag">Time Management</span>
+                        <span class="skill-tag">Adaptability</span>
+                        <span class="skill-tag">Discretion</span>
+                        <span class="skill-tag">Confidentiality</span>
+                        <span class="skill-tag">Communication</span>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="testi-card">
-        <div class="quote-mark">"</div>
-        <p class="testi-text">I hired Oyindamola to help with research, and she delivered beyond expectations. The depth of research, the clarity of the document, and her attention to formatting details made our submission stand out.</p>
-        <div class="testi-author">
-          <strong>Basit Adewale</strong><br>
-          <span>Cybersecurity Manager</span>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- CONTACT -->
-  <div class="section">
-    <div class="section-label">Contact</div>
-    <div class="section-title">Let's Work Together</div>
-    <div class="contact-inner">
-      <div class="contact-info">
-        <p>If you're a business owner, health professional, or coach drowning in admin tasks, missed follow-ups, or stalled projects — I'm here to take that off your plate.</p>
-        <div class="contact-item">
-          <i class="ti ti-mail contact-item-icon" aria-hidden="true"></i>
-          <div>
-            <h4>Email</h4>
-            <p>oyindamolarth@gmail.com</p>
-          </div>
+        <!-- ===== PORTFOLIO ===== -->
+        <div class="section">
+            <div class="section-label">Portfolio</div>
+            <div class="section-title">Portfolio Highlights</div>
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <h3>Health &amp; Wellness Brand</h3>
+                    <p>Researched competitors, delivered a structured report with market trends and strategic recommendations.</p>
+                    <div class="outcome">✦ Client pivoted pricing strategy — 20% increase in inquiry conversions</div>
+                </div>
+                <div class="portfolio-card">
+                    <h3>Research Proposal</h3>
+                    <p>Gathered data, structured the full document, and proofread for clarity, tone, and formatting standards.</p>
+                    <div class="outcome">✦ Submitted on time; client secured approval on first submission</div>
+                </div>
+                <div class="portfolio-card">
+                    <h3>Online Business Launch</h3>
+                    <p>Built a full launch tracker in Google Sheets, coordinating team tasks and client onboarding seamlessly.</p>
+                    <div class="outcome">✦ Launched on schedule; client saved 8+ hours/week on admin</div>
+                </div>
+            </div>
+            <div style="display:flex; gap:10px; margin-top:18px; flex-wrap:wrap;">
+                <span class="chip">Market Research Report</span>
+                <span class="chip">Project Management Support</span>
+                <span class="chip">Proposal Writing Support</span>
+            </div>
         </div>
-        <div class="contact-item">
-          <i class="ti ti-world contact-item-icon" aria-hidden="true"></i>
-          <div>
-            <h4>Location</h4>
-            <p>Remote · Available Worldwide</p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <i class="ti ti-clock contact-item-icon" aria-hidden="true"></i>
-          <div>
-            <h4>Response Time</h4>
-            <p>Within 24 hours guaranteed</p>
-          </div>
-        </div>
-        <div style="margin-top:16px; background:#b8860b18; border:1px solid #b8860b55; border-radius:8px; padding:12px 16px; display:flex; align-items:center; gap:10px;">
-          <i class="ti ti-check" style="color:#b8860b; font-size:18px;" aria-hidden="true"></i>
-          <span style="font-size:13px; color:#d4aa5a;">Currently accepting new clients — Flexible Hours · Immediate Availability</span>
-        </div>
-      </div>
-      <div class="contact-img">
-        <img src="/oyin.jpg" alt="Adeniyi Oyindamola" />
-      </div>
-    </div>
-  </div>
 
-  <!-- FOOTER -->
-  <div class="footer">
-    <div class="footer-name">Adeniyi Oyindamola</div>
-    <div class="footer-sub">Virtual Assistant · Administrative · Researcher</div>
-    <div class="footer-divider"></div>
-    <div class="footer-values">
-      <span>Reliability</span>
-      <span>·</span>
-      <span>Precision</span>
-      <span>·</span>
-      <span>Results</span>
-    </div>
-  </div>
+        <!-- ===== PROCESS ===== -->
+        <div class="section">
+            <div class="section-label">How We Work Together</div>
+            <div class="section-title">Simple. Seamless. Effective.</div>
+            <p style="font-size:14px; color:#9a8a78; margin-bottom:24px; line-height:1.7;">
+                Getting started is simple and stress-free. From our first conversation to seamless day-to-day support, every step is designed to get you results quickly.
+            </p>
+            <div class="process-row">
+                <div class="process-step">
+                    <div class="step-num">1</div>
+                    <h3>Discovery</h3>
+                    <p>We discuss your needs, goals, and how I can best support your business</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">2</div>
+                    <h3>Proposal</h3>
+                    <p>I send a tailored plan with scope, timeline, and terms that fit you</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">3</div>
+                    <h3>Onboarding</h3>
+                    <p>We set up tools, access, and workflows — quick and hassle-free</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">4</div>
+                    <h3>Deliver</h3>
+                    <p>I get to work, keeping you updated with clear communication throughout</p>
+                </div>
+            </div>
+        </div>
 
-</div>
+        <!-- ===== TESTIMONIALS ===== -->
+        <div class="section">
+            <div class="section-label">Testimonials</div>
+            <div class="section-title">What Clients Say</div>
+            <div class="testi-grid">
+                <div class="testi-card">
+                    <div class="quote-mark">"</div>
+                    <p class="testi-text">Transformed our operations and kept our team accountable. Our launch was on time, on budget, and zero confusion. She's a strategic partner.</p>
+                    <div class="testi-author">
+                        <strong>Mrs. Omolola Adigun</strong><br />
+                        <span>Business Owner</span>
+                    </div>
+                </div>
+                <div class="testi-card">
+                    <div class="quote-mark">"</div>
+                    <p class="testi-text">I hired Oyindamola to help with research, and she delivered beyond expectations. The depth of research, the clarity of the document, and her attention to formatting details made our submission stand out.</p>
+                    <div class="testi-author">
+                        <strong>Basit Adewale</strong><br />
+                        <span>Cybersecurity Manager</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== CONTACT ===== -->
+        <div class="section">
+            <div class="section-label">Contact</div>
+            <div class="section-title">Let's Work Together</div>
+            <div class="contact-inner">
+                <div class="contact-info">
+                    <p>If you're a business owner, health professional, or coach drowning in admin tasks, missed follow-ups, or stalled projects — I'm here to take that off your plate.</p>
+
+                    <div class="contact-item">
+                        <i class="ti ti-mail contact-item-icon" aria-hidden="true"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>oyindamolarth@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="ti ti-world contact-item-icon" aria-hidden="true"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Remote · Available Worldwide</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="ti ti-clock contact-item-icon" aria-hidden="true"></i>
+                        <div>
+                            <h4>Response Time</h4>
+                            <p>Within 24 hours guaranteed</p>
+                        </div>
+                    </div>
+
+                    <div class="availability-banner">
+                        <i class="ti ti-check" aria-hidden="true"></i>
+                        <span>Currently accepting new clients — Flexible Hours · Immediate Availability</span>
+                    </div>
+                </div>
+
+                <div class="contact-img">
+                    <!-- Replace src with your own image -->
+                    <img src="oyin.jpg" alt="Adeniyi Oyindamola" />
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== FOOTER ===== -->
+        <div class="footer">
+            <div class="footer-name">Adeniyi Oyindamola</div>
+            <div class="footer-sub">Virtual Assistant · Administrative · Researcher</div>
+            <div class="footer-divider"></div>
+            <div class="footer-values">
+                <span>Reliability</span>
+                <span>·</span>
+                <span>Precision</span>
+                <span>·</span>
+                <span>Results</span>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
